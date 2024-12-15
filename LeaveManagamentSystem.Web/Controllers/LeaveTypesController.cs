@@ -3,7 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using LeaveManagamentSystem.Web.Models.LeaveTypes;
 using LeaveManagamentSystem.Web.Services;
 
+
 namespace LeaveManagamentSystem.Web.Controllers {
+    [Authorize(Roles = Roles.Administrator)]
     public class LeaveTypesController(ILeaveTypesService _leaveTypesService) : Controller
     {
         private static string _nameExistValidationMessage = "Name is already exists in database";
